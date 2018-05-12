@@ -9,11 +9,17 @@ var Style = StyleSheet.create({
       entrada: {
         flex: 2,
         backgroundColor: '#21610B',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
+
       },
       teclado: {
         flex: 8,
         backgroundColor:'#01DF01',
+        color: 'white',
+        fontSize: 38,
+        fontWeight: 'bold',
+        textAlign: 'right',
+        padding: 20,
       },
       styleBotao: {
         flex: 1,

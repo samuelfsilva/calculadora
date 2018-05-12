@@ -17,11 +17,21 @@ const inputButtons = [
 ];
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        previousInputValue: 0,
+        inputValue: 0,
+        selectedSymbol: null
+    }
+  }
+  
   render() {
     return (
       <View style={Style.container}>
         <View style={Style.entrada}>
-          <Text style={Style.texto}>0</Text>
+          <Text style={Style.texto}>{this.state.inputValue}</Text>
         </View>
         <View style={Style.teclado}>
           {this._renderInputButtons()}
@@ -41,7 +51,11 @@ export default class App extends Component {
             let input = row[i];
 
             inputRow.push(
-                <Botao value={input} onPress={this._onInputButtonPressed.bind(this, input)} key={r + "-" + i} />
+                <Botao 
+                  value={input} 
+                  highlight={this.state.selectedSymbol === input}
+                  onPress={this._onInputButtonPressed.bind(this, input)} 
+                  key={r + "-" + i} />
             );
         }
 
@@ -52,7 +66,35 @@ export default class App extends Component {
   }
 
   _onInputButtonPressed(input) {
-    alert(input)
+    switch (typeof input) {
+      case 'number':
+        return this._handleNumberInput(input)
+      case 'string':
+        return this._handleStringInput(input)
+    }
+  }
+  
+  _handleNumberInput(num) {
+    let inputValue = (this.state.inputValue * 10) + num;
+
+    this.setState({
+      inputValue: inputValue
+    })
+  }
+
+  _handleStringInput(str) {
+    switch (str) {
+      case '/':
+      case '*':
+      case '+':
+      case '-':
+        this.setState({
+          selectedSymbol: str,
+          previousInputValue: this.state.inputValue,
+          inputValue: 0
+        });
+        break;
+    }
   }
 
 }
