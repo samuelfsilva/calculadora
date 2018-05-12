@@ -15,11 +15,6 @@ var Style = StyleSheet.create({
       teclado: {
         flex: 8,
         backgroundColor:'#01DF01',
-        color: 'white',
-        fontSize: 38,
-        fontWeight: 'bold',
-        textAlign: 'right',
-        padding: 20,
       },
       styleBotao: {
         flex: 1,
@@ -40,6 +35,14 @@ var Style = StyleSheet.create({
     texto: {
         flex: 1,
         fontSize: 50,
+        color: 'white',
+        fontSize: 38,
+        fontWeight: 'bold',
+        textAlign: 'right',
+        padding: 20,
+    },
+    inputButtonHighlighted: {
+      backgroundColor: '#193441'
     },
 });
 

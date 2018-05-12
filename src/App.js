@@ -93,7 +93,20 @@ export default class App extends Component {
           previousInputValue: this.state.inputValue,
           inputValue: 0
         });
-        break;
+        case '=':
+          let symbol = this.state.selectedSymbol,
+              inputValue = this.state.inputValue,
+              previousInputValue = this.state.previousInputValue;
+
+          if (!symbol) {
+              return;
+          }
+          this.setState({
+              previousInputValue: 0,
+              inputValue: eval(previousInputValue + symbol + inputValue),
+              selectedSymbol: null
+          });
+          break;
     }
   }
 
