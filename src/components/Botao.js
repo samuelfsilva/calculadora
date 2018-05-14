@@ -12,7 +12,7 @@ export default class Botao extends Component {
     render() {
         return (
             <TouchableHighlight style={[Style.styleBotao, this.props.highlight ? Style.inputButtonHighlighted : null]}
-                                underlayColor="#193441"
+                                underlayColor="#2ecc71"
                                 onPress={this.props.onPress}>
                 <Text style={Style.styleBotaoTexto}>{this.props.value}</Text>
             </TouchableHighlight>

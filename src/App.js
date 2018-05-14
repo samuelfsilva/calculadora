@@ -10,6 +10,7 @@ import Style from './components/Style';
 import Botao from './components/Botao';
 
 const inputButtons = [
+  ['C','CE','BKS','INFO'],
   [1, 2, 3, '/'],
   [4, 5, 6, '*'],
   [7, 8, 9, '-'],
@@ -75,10 +76,10 @@ export default class App extends Component {
   }
   
   _handleNumberInput(num) {
-    let inputValue2 = (this.state.inputValue * 10) + num;
+    let inputValue = (this.state.inputValue * 10) + num;
     
     this.setState({
-      inputValue: inputValue2
+      inputValue: inputValue
     });
   }
 
@@ -105,6 +106,15 @@ export default class App extends Component {
               previousInputValue: 0,
               inputValue: eval(previousInputValue + symbol + inputValue),
               selectedSymbol: null
+          });
+          break;
+        case 'INFO':
+          alert('Desenvolvido por Samuel Ferreira.')
+          break;
+        case 'BKS':
+          let inputValue2 = Math.round(this.state.inputValue/10);
+          this.setState({
+            inputValue: inputValue2
           });
           break;
     }

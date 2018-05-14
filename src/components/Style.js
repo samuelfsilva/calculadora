@@ -8,13 +8,13 @@ var Style = StyleSheet.create({
       },
       entrada: {
         flex: 2,
-        backgroundColor: '#21610B',
+        backgroundColor: '#00b894',
         justifyContent: 'center',
 
       },
       teclado: {
         flex: 8,
-        backgroundColor:'#01DF01',
+        backgroundColor:'#55efc4',
       },
       styleBotao: {
         flex: 1,
@@ -42,7 +42,7 @@ var Style = StyleSheet.create({
         padding: 20,
     },
     inputButtonHighlighted: {
-      backgroundColor: '#193441'
+      backgroundColor: '#27ae60'
     },
 });
 
