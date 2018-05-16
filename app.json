@@ -1,4 +1,15 @@
 {
-  "name": "calculadora",
-  "displayName": "calculadora"
+  "expo": {
+   "name": "Calculadora",
+   "icon": "./src/components/images/calculadora.png",
+   "version": "1.0.0",
+   "slug": "calculadora",
+   "sdkVersion": "23.0.0",
+   "ios": {
+     "bundleIdentifier": "com.empresa.calculadora"
+   },
+   "android": {
+     "package": "com.empresa.calculadora"
+   }
+  }
 }

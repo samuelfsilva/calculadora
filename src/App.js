@@ -112,7 +112,7 @@ export default class App extends Component {
           alert('Desenvolvido por Samuel Ferreira.')
           break;
         case 'BKS':
-          let inputValue2 = Math.round(this.state.inputValue/10);
+          let inputValue2 = Math.trunc(this.state.inputValue/10);
           this.setState({
             inputValue: inputValue2
           });
