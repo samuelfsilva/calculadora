@@ -76,8 +76,8 @@ export default class App extends Component {
   }
   
   _handleNumberInput(num) {
-    let inputValue = (this.state.inputValue * 10) + num;
-    
+    let inputValue = 0;
+    inputValue = (this.state.inputValue * 10) + num;
     this.setState({
       inputValue: inputValue
     });
@@ -112,9 +112,22 @@ export default class App extends Component {
           alert('Desenvolvido por Samuel Ferreira.')
           break;
         case 'BKS':
-          let inputValue2 = Math.trunc(this.state.inputValue/10);
+          let numb = this.state.inputValue
+          let inputValue2 = Math.trunc(numb/10);
           this.setState({
             inputValue: inputValue2
+          });
+          break;
+        case 'CE':
+          this.setState({
+            inputValue: 0
+          });
+          break;
+        case 'C':
+          this.setState({
+            previousInputValue: 0,
+            selectedSymbol: null,
+            inputValue: 0
           });
           break;
     }
